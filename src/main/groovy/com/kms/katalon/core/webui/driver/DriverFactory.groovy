@@ -26,7 +26,7 @@ class DriverFactory {
 
     private static WebDriver createDriver(DriverConfig config) {
         switch (config.browser) {
-            case BrowserType.CHROME:
+            case "CHROME":
                 WebDriverManager.chromedriver().setup()
                 ChromeOptions chromeOptions = new ChromeOptions()
                 if (config.headless) chromeOptions.addArguments("--headless=new")
@@ -39,13 +39,13 @@ class DriverFactory {
                 ])
                 return new ChromeDriver(chromeOptions)
 
-            case BrowserType.FIREFOX:
+            case "FIREFOX":
                 WebDriverManager.firefoxdriver().setup()
                 FirefoxOptions firefoxOptions = new FirefoxOptions()
                 if (config.headless) firefoxOptions.setHeadless(true)
                 return new FirefoxDriver(firefoxOptions)
 
-            case BrowserType.EDGE:
+            case "EDGE":
                 WebDriverManager.edgedriver().setup()
                 return new EdgeDriver()
 

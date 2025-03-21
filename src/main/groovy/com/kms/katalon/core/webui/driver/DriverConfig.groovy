@@ -10,7 +10,7 @@ class DriverConfig {
     final int pageLoadTimeout
 
     DriverConfig() {
-        browser = BrowserType.from(ConfigReader.get("browser", "chrome"))
+        browser = ConfigReader.get("browser", "chrome").toUpperCase()
         headless = ConfigReader.getBoolean("headless", false)
         incognito = ConfigReader.getBoolean("incognito", true)
         ignoreCertErrors = ConfigReader.getBoolean("ignore-certificate-errors", true)
