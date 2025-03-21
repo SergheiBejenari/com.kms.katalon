@@ -1,0 +1,25 @@
+plugins {
+    id 'groovy'
+    id 'io.qameta.allure' version '2.12.0' // Для Allure
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Groovy
+    implementation 'org.apache.groovy:groovy:5.0.0-alpha-11'
+
+    //Selenium
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+    implementation 'org.seleniumhq.selenium:selenium-leg-rc:3.141.59'
+}
+
+jar {
+    archiveBaseName = 'com.kms.katalon' // Название JAR
+    archiveVersion = '3.0' // Версия
+}
